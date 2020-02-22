@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
                 mJSONURLString,
                 null,
                 Response.Listener { response ->
-                    try {
                         //Create result object
                         val result = response.getJSONObject("results")
 
@@ -57,10 +56,6 @@ class MainActivity : AppCompatActivity() {
 
                         //Edit textView
                         api_text.text = "Sunrise: $sunrise \n Sunset: $sunset"
-
-                    } catch (e: JSONException) {
-                        e.printStackTrace()
-                    }
                 },
                 Response.ErrorListener { }
         )
